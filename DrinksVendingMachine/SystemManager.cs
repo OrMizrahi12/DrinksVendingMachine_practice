@@ -62,13 +62,13 @@ namespace DrinksVendingMachine
                     DrinkManager.AddHotDrink();
                     break; 
                 case 2:
-                    DrinkManager.BuyDrink();
+                     canBuyDrink();
                     break;
                 case 3:
                     Stock.AddStock();
                     break;
                 case 4:
-                    DrinkManager.DeleteDrink();
+                    canDeletDrink();
                     break;
                 case 5:
                     Stock.ShowStocks();
@@ -77,5 +77,19 @@ namespace DrinksVendingMachine
                     break;
             }
         }
+
+        static private void canBuyDrink()
+        {
+            if(DrinkManager.HotDrinks.Count > 0) DrinkManager.BuyDrink();
+            else Console.WriteLine("You are not added hot drink. \nAdd at least one drink.");
+        }
+        static private void canDeletDrink()
+        {
+            if (DrinkManager.HotDrinks.Count > 0) DrinkManager.DeleteDrink();
+            else Console.WriteLine("You are not cant delete any drink. \nAdd at least one drink.");
+        }
+
+
+
     }
 }

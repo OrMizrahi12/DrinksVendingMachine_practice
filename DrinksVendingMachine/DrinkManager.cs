@@ -31,7 +31,6 @@ namespace DrinksVendingMachine
         }
         public static void BuyDrink()
         {
-            ShowHotDrink();
             PrepareDrink.Prepare(chooseItemValidation());
         }
 
@@ -113,7 +112,6 @@ namespace DrinksVendingMachine
 
         private static HotDrink chooseItemValidation()
         {
-            Console.WriteLine("Choose the number that respresent the drink you what remove:");
             int index = 1;
           
             foreach (var item in hotDrinks)
