@@ -62,7 +62,7 @@ namespace DrinksVendingMachine
                     DrinkManager.AddHotDrink();
                     break; 
                 case 2:
-                    DrinkManager.ShowHotDrink();
+                    DrinkManager.BuyDrink();
                     break;
                 case 3:
                     Stock.AddStock();

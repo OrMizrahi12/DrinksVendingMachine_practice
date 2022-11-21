@@ -29,12 +29,19 @@ namespace DrinksVendingMachine
             Stock.AddCapsule(capsule);
 
         }
+        public static void BuyDrink()
+        {
+            ShowHotDrink();
+            PrepareDrink.Prepare(chooseItemValidation());
+        }
 
         public static void ShowHotDrink()
         {
             for (int i = 0; i < hotDrinks.Count; i++)
                 Console.WriteLine($"{i + 1}. {hotDrinks[i].DrinkName}");
         }
+
+
         private static string nameValidation(string propertyType)
         {
             bool ok = true;
@@ -115,7 +122,7 @@ namespace DrinksVendingMachine
                 index++;
             }
          
-            int result = removingNumberValidation();
+            int result = chooseNumberValidation();
          
             for (int i = 0; i < hotDrinks.Count; i++)
                 if (i == result - 1)
@@ -123,7 +130,7 @@ namespace DrinksVendingMachine
             
             return null;
         }
-        private static int removingNumberValidation() 
+        private static int chooseNumberValidation() 
         {
             bool ok = true;
             string input;
